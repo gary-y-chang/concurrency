@@ -58,7 +58,7 @@ func (runner *TaskRunner) Start() error {
 	signal.Notify(runner.interrupt, os.Interrupt)
 
 	go func () {
-		runner.complete <- runner.run()
+		runner.complete <-runner.run()
 	}()
 
 	select{
